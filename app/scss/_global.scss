@@ -1,0 +1,163 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  height: 100%;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body {
+  // background-color: tomato;
+  font-family: "Roboto-Regular", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 24px;
+  color: $text;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+  font-weight: inherit;
+  text-decoration: none;
+  color: inherit;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: $text;
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+.content {
+  flex: 1 0 auto;
+}
+.footer {
+  flex: 0 0 auto;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.container-fluid {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+@media (max-width: 720px) {
+  .container-fluid {
+    padding: 0 15px;
+  }
+}
+
+.page-content {
+  background-color: $grey;
+}
+
+.title {
+  color: $bg;
+  @include f700;
+  font-size: 36px;
+  line-height: 60px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.rate-star {
+  display: inline-block;
+  margin-right: 13px;
+}
+
+.breadcrumbs {
+  &__inner {
+    padding: 45px 0px 40px;
+
+    // *               adaptive
+    overflow: hidden;
+    width: 1200px;
+  }
+
+  &__list {
+    li {
+      display: inline-block;
+      position: relative;
+
+      & + li {
+        padding-left: 24px;
+
+        &::before {
+          content: "-";
+          position: absolute;
+          left: 8px;
+          color: $blue;
+        }
+      }
+
+      &:last-child {
+        a,
+        span {
+          color: $bg;
+        }
+      }
+
+      a {
+        color: #b0bec5;
+      }
+    }
+  }
+}
+
+.angel-right {
+  position: relative;
+  padding-left: 15px;
+
+  &::before {
+    position: absolute;
+    content: "\f105";
+    font-family: "icomoon";
+    left: 0;
+    font-size: 14px;
+    color: $red;
+  }
+}
+
+#modal {
+  display: none;
+  background-color: rgba($red, 0.8);
+  max-width: 730px;
+  width: 100%;
+  padding-top: 90px;
+  padding-bottom: 100px;
+}
